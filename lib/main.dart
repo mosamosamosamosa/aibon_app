@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       // 遷移する画面を定義する
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => StartScreen(),
+
         // '/home': (BuildContext context) => HomeDriverScreen(
         //       busList: ["ああ"],
         //     ),
