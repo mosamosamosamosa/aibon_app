@@ -2,6 +2,9 @@ import 'package:aibon_app/components/aibon_item.dart';
 import 'package:aibon_app/components/aibon_item2.dart';
 import 'package:aibon_app/constans.dart';
 import 'package:aibon_app/database/database.dart';
+import 'package:aibon_app/screens/cook/cook_screen.dart';
+import 'package:aibon_app/screens/health/health_screen.dart';
+import 'package:aibon_app/screens/talk/talk_screen.dart';
 import 'package:flutter/material.dart';
 
 class AibonListScreen extends StatefulWidget {
@@ -43,17 +46,30 @@ class _AibonListScreenState extends State<AibonListScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TalkScreen()),
+                  );
+                },
                 child: const AibonItem(
                   example: '簡単な日常会話が\nできます',
                   name: '雑談',
                   image: 'assets/images/talk.png',
                 ),
               ),
-              AibonItem(
-                example: '料理・食事などに\n詳しいAI',
-                name: 'お料理',
-                image: 'assets/images/cook.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CookScreen()),
+                  );
+                },
+                child: AibonItem(
+                  example: '料理・食事などに\n詳しいAI',
+                  name: 'お料理',
+                  image: 'assets/images/cook.png',
+                ),
               ),
             ],
           ),
@@ -65,9 +81,19 @@ class _AibonListScreenState extends State<AibonListScreen> {
               itemBuilder: (BuildContext context, index) {
                 return Column(
                   children: [
-                    AibonItem2(
-                      name: aibon_list[index].name,
-                      image: aibon_list[index].image,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  HealthScreen(name: aibon_list[index].name)),
+                        );
+                      },
+                      child: AibonItem2(
+                        name: aibon_list[index].name,
+                        image: aibon_list[index].image,
+                      ),
                     ),
                     SizedBox(height: 20)
                   ],
