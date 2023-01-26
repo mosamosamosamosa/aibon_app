@@ -34,3 +34,27 @@ List<Aibon> aibon_list = [
       image: 'assets/images/bag.png',
       explain: '簡単な日常会話が\nできます'),
 ];
+
+class Talkchat {
+  final name;
+  final String text;
+  final String image;
+
+  Talkchat({required this.name, required this.text, required this.image});
+}
+
+List<Talkchat> talk_list = [
+  // Aibon(name: "雑談", image: 'assets/images/talk.png', explain: '簡単な日常会話が\nできます'),
+  // Aibon(
+  //     name: "お料理", image: 'assets/images/talk.png', explain: '簡単な日常会話が\nできます'),
+  Talkchat(
+    name: "aibon",
+    text: "はじめまして",
+    image: 'assets/images/talk_icon.png',
+  ),
+  Talkchat(
+    name: "aibon",
+    text: "こんにちは",
+    image: 'assets/images/talk_icon.png',
+  ),
+];

@@ -73,7 +73,10 @@ class StartScreen extends StatelessWidget {
             child: Container(
                 alignment: Alignment.bottomCenter,
                 margin: EdgeInsets.only(bottom: 90),
-                child: StartButton()),
+                child: StartButton(
+                  text: 'はじめる',
+                  start: true,
+                )),
           ),
         ],
       ),
